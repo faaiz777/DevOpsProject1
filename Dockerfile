@@ -1,12 +1,11 @@
-FROM ubuntu:latest
-MAINTAINER faaiz0076@gmail.com
-RUN yum install -y httpd \
- zip \
- unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page280/webwing.zip /var/www/html/
-WORKDIR /var/www/html
-RUN unzip webwing.zip
-RUN cp -rvf html/* .
-RUN rm -rf webwing.zip
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
-EXPOSE 80
+FROM centos:latest
+	MAINTAINER faaiz0076@gmail.com
+	RUN yum install -y httpd && \
+	    yum install -y unzip
+	ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
+	WORKDIR /var/www/html
+	RUN unzip photogenic.zip && \
+	    cp -rvf photogenic/*  .   && \
+	    rm -rf photogenic photogenic.zip
+	CMD [*/usr/sbin/httpd", "-D" , "FOREGROUND"]
+	EXPOSE 80
