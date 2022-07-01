@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos
 	MAINTAINER faaiz0076@gmail.com
 	RUN yum install -y httpd && \
 	    yum install -y unzip
